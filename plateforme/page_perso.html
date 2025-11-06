@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Esportify - Plateforme de tournois Esport en ligne</title>
+    <meta name="description" content="Mettez vos compétences à l'epreuve avec Esportify, la plateforme 100% gaming.
+    Rejoignez une communauté passionnée de joueurs,participez à des tournois palpitants.
+    Rejoignez-nous dès maintenant et devenez le champion du gaming ! " />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/assets/img/logoManette.png" />
+</head>
+
+<body data-role="admin">
+
+
+    <!--header de la page avec bannière et menu-->
+    <header class="header">
+        <!--menu de navigation desktop-->
+        <div class="topbar">
+            <div class="logo">
+                <a href="accueil.html"><img src="assets/img/logoManette.png" alt="logo de esportify" /></a>
+            </div>
+            <nav class="nav-links" aria-label="Menu de navigation">
+                <a href="accueil.html">Accueil</a>
+                <a href="events_tournois.html">Événements</a>
+                <a href="jeux.html">Jeux</a>
+                <a href="contact.html">Contacts</a>
+                <a href="connexion.html">Connexion</a>
+            </nav>
+            <button class="burger" aria-label="Ouvrir le menu" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="lines" aria-hidden="true"></span>
+            </button>
+
+            <ul class="dropdown-menu hidden">
+                <li><a href="profil.html">Mon profil</a></li>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="events_tournois.html">Événements</a></li>
+                <li><a href="jeux.html">Jeux</a></li>
+                <li><a href="contact.html">Contacts</a></li>
+                <li><a href="deconnexion.html">Déconnexion</a></li>
+            </ul>
+        </div>
+        </div>
+
+        <div id="overlay" class="overlay hidden" aria-hidden="true"></div>
+        <dialog id="mobile-menu" class="mobile-panel" aria-modal="true" aria-label="Menu">
+            <nav class="mobile-nav" aria-label="Menu de navigation mobile">
+                <button class="close-menu" aria-label="Fermer le menu">×</button>
+                <a href="#accueil">Accueil</a>
+                <a href="#evenements">Evénements</a>
+                <a href="jeux.html">Jeux</a>
+                <a href="#contacts">Contacts</a>
+                <a href="#connexion">Connexion</a>
+            </nav>
+        </dialog>
+    </header>
+    <!--fin header-->
+    <main class="playeur site-content">
+        <!-- Bloc commun -->
+        <section class="common-player-profile" data-visible-for="joueur,organisateur,admin">
+            <section class="player-profile">
+                <div class="user-block">
+                    <img src="assets/img/teams/image_manga.jpg" alt="Avatar de Marinabpro" class="avatar">
+                    <h2 class="username">Marinabpro</h2>
+                    <span class="role-badge" data-role="admin">Admin</span>
+                </div>
+                <div class="level-bar">
+                    <label for="level">Niveau</label>
+                    <progress id="level" value="20" max="100"></progress>
+
+                </div>
+                <div class="team-infos">
+                    <img src="assets/img/icones/Avatar.png" alt="Avatar de l'utilisateur" />
+                    <div class="team-text">
+                        <p class="team-name"> Les Boss du 33</p>
+                        <p class="team-date">Membre depuis le 05/05/2024</p>
+                    </div>
+                </div>
+                <button class="edit-profile"> Modifier mes infos</button>
+            </section>
+            <section class="event-favorites">
+                <div class="event-card-favorite" data-start="2025-10-09T14:00">
+                    <div class="event-meta">
+                        <span class="event-date">09/10/2025</span>
+                        <span class="event-time">14h00</span>
+                    </div>
+                    <img src="assets/img/imagesJeux/RocketLeague.jpg" alt="Tournoi Rocket League"
+                        class="event-img-card" />
+                    <div class="event-info">
+                        <h4>Tournoi Rocket League</h4>
+                        <button class="join-btn hidden">Rejoindre</button>
+                    </div>
+                </div>
+            </section>
+            <section class="event-create">
+                <h3>Créer un événement</h3>
+                <form id="event-form-player">
+                    <input type="text" name="title" placeholder="Nom de l'événement" required />
+                    <input type="datetime-local" name="start" required />
+                    <textarea name="description" placeholder="Description de l'événement" required></textarea>
+                    <button type="submit">Soumettre</button>
+                </form>
+            </section>
+            <section class="event-history">
+                <h3>Historique des événements</h3>
+                <div class="event-list">
+                    <!-- événements ajoutés dynamiquement -->
+                </div>
+            </section>
+
+            <section class="stats-section">
+                <h3>Mes statistiques</h3>
+                <div class="stats-grid">
+                    <div class="stats-card">
+                        <h4>Matchs joués</h4>
+                        <p>0</p>
+                    </div>
+                    <div class="stats-card">
+                        <h4>Matchs gagnés</h4>
+                        <p>0</p>
+                    </div>
+                    <div class="stats-card">
+                        <h4>Classement général</h4>
+                        <p>0</p>
+                    </div>
+                    <div class="stats-card">
+                        <h4>Classement équipe</h4>
+                        <p>0</p>
+                    </div>
+                </div>
+            </section>
+            <section class="team-section">
+                <h3>Ma team</h3>
+                <p class="team-name"> les boss du 33</p>
+                <input type="text" placeholder="Rechercher une team" class="team-search" />
+                <div class="team-action">
+                    <button>Créer une team</button>
+                    <button>Demande d'ajout</button>
+                </div>
+            </section>
+        </section>
+
+        <!-- Bloc réservé aux joueurs organisateurs-->
+
+        <section class="organizer-tools hidden" data-visible-for="organisateur,admin">
+            <h3>Interface organisateur</h3>
+            <section class="organizer-dashboard">
+                <h3>Organisations des événements</h3>
+                <div class="event-list">
+                    <div class="event-card">
+                        <div class="event-meta">09/10/2025 - 14h00</div>
+                        <img src="/assets/img/imagesJeux/RocketLeague.jpg" alt="Tournoi Rocket league">
+                        <div class="event-info">
+                            <h4>Tournoi Rocket League</h4>
+                            <p><em>Statut : En attente de validation</em></p>
+                            <button class="edit-btn">Modifier</button>
+                            <button class="start-btn hidden">Démarrer l'événement</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="inscription-management">
+                <h3>Inscriptions reçues</h3>
+                <div class="inscription-card">
+                    <p>Joueur : ShadowX</p>
+                    <p>Événement : Tournoi Rocket League</p>
+                    <button class="accept-btn">Valider</button>
+                    <button class="reject-btn">Rejeter</button>
+                </div>
+            </section>
+            <section class="event-editor">
+                <h3>Créer ou modifier un événement</h3>
+                <form id="event-form-organizer">
+                    <input type="text" name="title" placeholder="Nom de l'événement" required />
+                    <input type="datetime-local" name="start" required />
+                    <textarea name="description" placeholder="Description" required></textarea>
+                    <button type="submit">Soumettre</button>
+                </form>
+            </section>
+        </section>
+
+        <!--Bloc résérver aux administrateurs-->
+
+        <section class="admin-panel hidden" data-visible-for="admin">
+            <h3>Interface Administrateur</h3>
+            <div class="admin-tabs">
+                <button data-tab="moderation" class="tab-btn active">Modération</button>
+                <button data-tab="users" class="tab-btn">Utilisateurs</button>
+                <button data-tab="dashboard" class="tab-btn">Tableau de bord</button>
+            </div>
+            <div class="admin-tab-content">
+                <div class="tab-section" id="moderation" data-tab-content>
+                    <!-- Bloc modération des événements -->
+                    <section class="event-moderation">
+                        <h3>Modération des événements</h3>
+                        <div class="event-card">
+                            <h4>Tournoi Rocket League</h4>
+                            <p>Statut : Validé</p>
+                            <button class="suspend-btn">Suspendre</button>
+                            <button class="view-modifications-btn">Voir les modifications</button>
+                        </div>
+                    </section>
+                </div>
+                <div class="tab-section hidden" id="users" data-tab-content>
+                    <!-- Bloc gestion des utilisateurs -->
+
+                    <section class="admin-user-management hidden" data-visible-for="admin">
+                        <h3>Gestion des utilisateurs</h3>
+                        <table class="user-table">
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Rôle</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Marinabpro</td>
+                                    <td>Organisateur</td>
+                                    <td>
+                                        <button class="change-role-btn">Changer rôle</button>
+                                        <button class="ban-user-btn">Suspendre</button>
+                                    </td>
+                                </tr>
+                                <!-- autres utilisateurs -->
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+                <div class="tab-section hidden" id="dashboard" data-tab-content>
+                    <!-- Bloc tableau de bord analytique -->
+                    <section class="admin-dashboard hidden" data-visible-for="admin">
+                        <h3>Tableau de bord</h3>
+                        <div class="dashboard-grid">
+                            <div class="metric-card">
+                                <h4>Événements créés</h4>
+                                <p id="event-count">42</p>
+                            </div>
+                            <div class="metric-card">
+                                <h4>Participants inscrits</h4>
+                                <p id="participant-count">128</p>
+                            </div>
+                            <div class="metric-card">
+                                <h4>Événements suspendus</h4>
+                                <p id="suspended-count">3</p>
+                            </div>
+                            <!-- autres métriques -->
+                        </div>
+                        <canvas id="eventChart"></canvas>
+                    </section>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <!--pied de page -->
+    <footer class="footer-nav">
+        <a href="/accueil.html"><img class="logo" src="assets/img/logoManette.png" alt="logo de esportify" /></a>
+        <ul>
+            <li>© 2025 Esportify. Tous droits réservés.</li>
+            <li>Made With <img src="/assets/img/icones/Vector_heart.png" alt=" icone coeur" class="icone-heart" />
+            </li>
+            <li>Condition d'utilisation</li>
+            <li>Contact nous</li>
+        </ul>
+    </footer>
+
+    <script type="module" src="/js/main.js"></script>
+
+</body>
+
+</html>

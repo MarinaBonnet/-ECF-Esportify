@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esportify - Plateforme de tournois Esport en ligne</title>
+  <meta name="description" content="Mettez vos compétences à l'epreuve avec Esportify, la plateforme 100% gaming.
+    Rejoignez une communauté passionnée de joueurs,participez à des tournois palpitants.
+    Rejoignez-nous dès maintenant et devenez le champion du gaming ! " />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="/assets/img/logoManette.png" />
+</head>
+
+<body class="game-mode" data-role="joueur">
+
+
+  <!--header de la page avec bannière et menu-->
+  <header class="header">
+    <!--menu de navigation desktop-->
+    <div class="topbar">
+      <div class="logo">
+        <a href="accueil.html"><img src="assets/img/logoManette.png" alt="logo de esportify" /></a>
+      </div>
+      <nav class="nav-links" aria-label="Menu de navigation">
+        <a href="accueil.html">Accueil</a>
+        <a href="events_tournois.html">Événements</a>
+        <a href="jeux.html">Jeux</a>
+        <a href="contact.html">Contacts</a>
+        <a href="connexion.html">Connexion</a>
+      </nav>
+      <button class="burger" aria-label="Ouvrir le menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span class="lines" aria-hidden="true"></span>
+      </button>
+    </div>
+    <dialog id="mobile-menu" class="mobile-panel" aria-modal="true" aria-label="Menu">
+      <nav class="mobile-nav" aria-label="Menu de navigation mobile">
+        <button class="close-menu" aria-label="Fermer le menu">×</button>
+        <a href="#accueil">Accueil</a>
+        <a href="#evenements">Evénements</a>
+        <a href="jeux.html">Jeux</a>
+        <a href="#contacts">Contacts</a>
+        <a href="#connexion">Connexion</a>
+      </nav>
+    </dialog>
+  </header>
+  <!--fin header-->
+  <main class="event-live-page game-page site-content" data-game="Yamzilla" data-username="Marinabpro">
+    <section class="event-header">
+      <h1>Yamzilla</h1>
+      <p class="event-status started"> En cours</p>
+    </section>
+    <section class="game-area">
+      <h2>Zone de jeux</h2>
+      <!--Integration du jeu ici-->
+      <div id="game-loader" class="game-loader hidden">
+        <div class="spinner"></div>
+        <p>Chargement du jeu...</p>
+      </div>
+
+      <div id="game-container">
+
+      </div>
+    </section>
+
+    <section class="event-chat">
+      <h2>Chat en direct</h2>
+      <div class="chat-message" id="chat-message"></div>
+      <form id="chat-form">
+        <input type="text" id="chat-input" placeholder="Écrire un message..." aria-label="Écrire un message" required />
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+
+  </main>
+  <!--pied de page -->
+  <footer class="footer-nav">
+    <a href="/accueil.html"><img class="logo" src="assets/img/logoManette.png" alt="logo de esportify" /></a>
+    <ul>
+      <li>© 2025 Esportify. Tous droits réservés.</li>
+      <li>Made With <img src="/assets/img/icones/Vector_heart.png" alt=" icone coeur" class="icone-heart" /></li>
+      <li>Condition d'utilisation</li>
+      <li>Contact nous</li>
+    </ul>
+  </footer>
+
+  <script type="module" src="/js/main.js"></script>
+
+</body>
+
+</html>

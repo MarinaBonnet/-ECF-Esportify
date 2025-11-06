@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "title": "Tournoi Yams",
+    "description": "Affrontez vos amis dans un tournoi de Yams endiablé.",
+    "players": 2,
+    "isVisible": true,
+    "author": "Marina",
+    "image": "/plateforme/assets/img/imagesJeux/logo_yams.png",
+    "startDate": "2025-11-12",
+    "endDate": "2025-11-14"
+  },
+  {
+    "id": 2,
+    "title": "Mario Party",
+    "description": "Un événement festif autour de Mario Party.",
+    "players": 4,
+    "isVisible": true,
+    "author": "Alex",
+    "image": "/plateforme/assets/img/imagesJeux/mario.jpg",
+    "startDate": "2025-11-20",
+    "endDate": "2025-11-22"
+  },
+  {
+    "id": 3,
+    "title": "Jeu secret",
+    "description": "Événement en attente de modération.",
+    "players": 1,
+    "isVisible": false,
+    "author": "Inconnu",
+    "image": "/plateforme/assets/img/imagesJeux/imgJeuMarina.png",
+    "startDate": "2025-11-25",
+    "endDate": "2025-11-26"
+  }
+]
