@@ -5,6 +5,13 @@ Elle permet aux joueurs de s’inscrire à des compétitions, de voir leur stats
 Elle est aussi doté d'une interface de gestion pour ses événements .
 ---
 
+## 🎯 Objectifs du projet
+
+Le projet **Esportify** a pour objectif de proposer une plateforme simple et moderne dédiée à l’e‑sport.  
+Il vise à faciliter l’inscription des joueurs aux compétitions, à centraliser la communication des organisateurs, et à offrir une expérience utilisateur fluide sur desktop comme sur mobile.
+
+---
+
 ## 🚀 Fonctionnalités principales
 - Inscription aux tournois et à la newsletter
 - Envoi d’emails HTML personnalisés (jeu, date, récompenses, lien)
