@@ -1,40 +1,43 @@
 # 🎮 Esportify
 
-**Esportify** est une plateforme web dédiée à la gestion et à la visualisation d'événements e-sport. Elle permet de suivre les matchs, les équipes, les statistiques et d'offrir une interface immersive pour les fans et les organisateurs.
+Esportify est une plateforme web dédiée aux compétition  e-sport.  
+Elle permet aux joueurs de s’inscrire à des compétitions, de voir leur stats et  communiquer entre eux .
+Elle est aussi doté d'une interface de gestion pour ses événements .
+---
 
-## 🚀 Fonctionnalités prévues
-
-- 📅 Planning des matchs et tournois
-- 🧑‍🤝‍🧑 Gestion des équipes et des joueurs
-- 📊 Statistiques en temps réel
-- 🎨 Interface dynamique et personnalisable
-- 🔔 Notifications et alertes de match
-- 🧩 Modules extensibles pour différents jeux
-
-## 🛠️ Stack technique
-
-- HTML / CSS / JavaScript (ES Modules)
-- Node.js (scripts et helpers)
-- GitHub Pages ou serveur local
-- Architecture modulaire et scalable
-
-## 📁 Structure du projet
-
-esportify/ 
-├── index.html 
-├── style/ 
-    └── assets/ 
-├── script/
-│ ├── main.js
-│ ├── modules/ 
-│ ├── helpers/ 
-│ 
-└── README.md
-
-## 📌 Objectifs
-
-- Finaliser une version fonctionnelle en 14 jours
-- Prioriser la modularité, la clarté et l’expérience utilisateur
-- Préparer une démo ou une version publique
+## 🚀 Fonctionnalités principales
+- Inscription aux tournois et à la newsletter
+- Envoi d’emails HTML personnalisés (jeu, date, récompenses, lien)
+- Lien de désinscription sécurisé (RGPD)
+- Interface responsive (desktop + mobile)
+- Gestion des événements et communication centralisée
+- Design gaming immersif
 
 ---
+
+## ⚙️ Spécifications techniques
+- **Langage :** PHP 8+
+- **Base de données :** MariaDB/MySQL
+- **Connexion :** PDO avec requêtes préparées
+- **Emails :** PHPMailer via SMTP Gmail (TLS)
+- **Gestion des secrets :** `.env` (phpdotenv)
+- **Frontend :** HTML5 / CSS3 responsive
+- **Versionning :** Git + GitHub
+
+---
+
+## 🔐 Sécurité
+- Validation des emails côté client (HTML5) et côté serveur (PHP `filter_var`)
+- Requêtes préparées PDO pour éviter les injections SQL
+- Tokens uniques pour la désinscription
+- Identifiants sensibles protégés dans `.env`
+- SMTP sécurisé avec TLS
+- Respect du RGPD (désinscription possible à tout moment)
+
+---
+
+## 📦 Installation
+
+1. Cloner le dépôt :
+   ```bash
+   git clone https://github.com/tonPseudo/esportify.git
