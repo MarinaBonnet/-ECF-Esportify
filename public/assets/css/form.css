@@ -1,0 +1,103 @@
+:root {
+  --bg: #0f172a;
+  --panel: #1e293b;
+  --input: #334155;
+  --text: #e2e8f0;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --radius: 6px;
+  --shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+dialog {
+  background-color: var(--panel);
+  color: var(--text);
+  border: none;
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  max-width: 500px;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, textarea {
+  background-color: var(--input);
+  color: var(--text);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.8rem;
+  font-size: 1rem;
+}
+
+button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.8rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--accent-hover);
+}
+
+#form-message {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.form-feedback {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+#form-message.success {
+  background-color: #4caf50;
+  color: white;
+}
+
+#form-message.error {
+  background-color: #f44336;
+  color: white;
+}
+
+
+.form-feedback.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.signup-panel input[type="password"] {
+  border: 1px solid #64748b;
+}
+
+.contact-panel .email-field {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.event-panel textarea {
+  resize: vertical;
+}

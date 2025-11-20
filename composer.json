@@ -1,0 +1,41 @@
+{
+  "name": "marina/projetesportify",
+  "description": "Plateforme web dédiée à l’organisation et à la gestion de tournois esport en ligne",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Marina B.",
+      "email": "marina@esportify.com"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "firebase/php-jwt": "^6.5",
+    "guzzlehttp/guzzle": "^7.8",
+    "monolog/monolog": "^2.9",
+    "phpmailer/phpmailer": "^7.0",
+    "respect/validation": "^2.2",
+    "symfony/dotenv": "^6.4",
+    "symfony/var-dumper": "^6.0",
+    "vlucas/phpdotenv": "^5.6"
+  },
+  "scripts": {
+    "start": "php -S localhost:8000 -t public",
+    "test": "phpunit",
+    "dump": "composer dump-autoload"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true,
+    "platform": {
+      "php": "8.1.0"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/Core/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

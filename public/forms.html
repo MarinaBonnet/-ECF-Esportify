@@ -1,0 +1,131 @@
+<!-- Formulaire de contact -->
+<dialog id="contact-modal" class="contact-panel" aria-label="Formulaire de contact">
+    <form id="contact-form" class="contact-form" method="POST" action="contact.php">
+        <button class="close-contact" aria-label="Fermer le formulaire">×</button>
+
+        <h2>Contacte-nous</h2>
+
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" required />
+
+        <div id="email-group" class="email-group">
+
+            <div class="email-field">
+                <label for="contact-email-1">Email</label>
+                <input type="email" id="contact-email-1" name="email[]" required />
+                <button type="button" class="remove-email" aria-label="Supprimer cet email">×</button>
+            </div>
+        </div>
+        <button type="button" id="add-email" class="add-email">+ Ajouter un email</button>
+
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <button type="button" class="test-form" data-target="contact-modal">🔍 Tester ce formulaire</button>
+        <button type="submit">Envoyer</button>
+        <p class="form-feedback hidden">Merci pour ton message !</p>
+    </form>
+</dialog>
+
+<!-- Formulaire d'inscription-->
+<dialog id="signup-modal" class="signup-panel" aria-label="Formulaire d'inscription">
+    <form id="signup-form" class="signup-form">
+        <button class="close-signup" aria-label="Fermer le formulaire">×</button>
+
+        <h2>Inscription</h2>
+
+        <label for="signup-username">Nom d'utilisateur</label>
+        <input type="text" id="signup-username" name="username" required />
+
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" required />
+        <progress id="password-strength" max="100" value="0"></progress>
+        <p id="strength-label" class="strength-label">Force : —</p>
+
+        <label for="confirm-password">Confirmer le mot de passe</label>
+        <input type="password" id="confirm-password" name="confirm-password" required />
+
+        <div id="signup-email-group" class="email-group">
+            <div class="email-field">
+                <label for="signup-email-1">Email</label>
+                <input type="email" id="signup-email-1" name="email[]" required />
+                <button type="button" class="remove-email" aria-label="Supprimer cet email">×</button>
+            </div>
+        </div>
+        <label for="verification-code">Code de vérification</label>
+        <input type="text" id="verification-code" name="verification-code" required />
+        <button type="button" id="signup-add-email" class="add-email">+ Ajouter un email</button>
+        <button type="button" class="test-form" data-target="signup-modal">🔍 Tester ce formulaire</button>
+        <button type="submit">S'inscrire</button>
+        <p class="form-feedback hidden">Inscription réussie !</p>
+    </form>
+</dialog>
+
+<!--Formulaire de connexion-->
+
+<dialog id="login-modal" class="login-panel" aria-label="Connexion">
+    <form id="login-form" class="login-form">
+        <button class="close-login" aria-label="Fermer le formulaire">×</button>
+
+        <h2>Connexion</h2>
+
+        <label for="login-username">Nom d'utilisateur</label>
+        <input type="text" id="login-username" name="login-username" required />
+
+        <label for="login-password">Mot de passe</label>
+        <input type="password" id="login-password" name="password" required />
+
+        <label for="login-code">Code de vérification</label>
+        <input type="text" id="login-code" name="code" required />
+        <button type="button" class="test-form" data-target="login-modal">🔍 Tester ce formulaire</button>
+        <button type="submit">Se connecter</button>
+        <p class="form-feedback hidden">Connexion réussie !</p>
+    </form>
+</dialog>
+
+<!--Formulaire demande d'événement-->
+
+<dialog id="event-modal" class="event-panel" aria-label="Demande d'événement">
+    <form id="event-form" class="event-form">
+        <button class="close-event" aria-label="Fermer le formulaire">×</button>
+
+        <h2>Proposer un événement</h2>
+
+        <input type="hidden" name="id" /> <!-- utilisé en mode édition -->
+
+        <label for="event-name">Nom de l'événement</label>
+        <input type="text" id="event-name" name="name" required />
+
+        <label for="game">Jeu concerné</label>
+        <input type="text" id="game" name="game" required />
+
+        <label for="date">Date souhaitée</label>
+        <input type="date" id="date" name="date" required />
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+
+        <label for="organizer-email">Email de l'organisateur</label>
+        <input type="email" id="organizer-email" name="email" required />
+
+        <button type="button" class="test-form" data-target="event-modal">🔍 Tester ce formulaire</button>
+        <button type="button" class="cancel-btn">Annuler</button>
+
+        <button type="submit" class="submit-btn">
+
+            <span class="btn-label">Envoyer la demande</span>
+        </button>
+
+        <p id="form-message" class="form-feedback hidden"></p>
+    </form>
+</dialog>
+
+<script type="module">
+    import { openModalAndValidate } from './js/forms/formDebug.js';
+    import { initEventForm } from './js/modules/eventForm.js';
+    initEventForm();
+
+    // Test manuel
+    openModalAndValidate("signup-modal");
+    openModalAndValidate("contact-modal");
+</script>

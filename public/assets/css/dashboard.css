@@ -1,0 +1,110 @@
+body {
+  background: #1a1a1a;
+  color: #eee;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.dev-btn {
+  padding: 8px 12px;
+  margin-right: 5px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.dev-btn:hover {
+  background: #555;
+}
+
+#mode-indicator {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.console-box {
+  background: #000;
+  color: #0f0;
+  font-family: monospace;
+  font-size: 13px;
+  padding: 10px;
+  margin-top: 20px;
+  max-height: 40vh;
+  overflow-y: auto;
+  border-radius: 8px;
+}
+.carte {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.carte.disparait {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.status-module {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.status-card {
+  border-left: 5px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-left-color 0.3s ease;
+}
+
+.status-card:hover {
+  transform: scale(1.02);
+}
+
+.status-card[data-statut="actif"] { border-left-color: green; }
+.status-card[data-statut="bloqué"] { border-left-color: red; }
+.status-card[data-statut="inactif"] { border-left-color: orange; }
+
+.status-card.flash-success {
+  animation: flashGreen 0.6s ease;
+}
+.status-card.flash-error {
+  animation: flashRed 0.6s ease;
+}
+
+@keyframes flashGreen {
+  0% { background-color: #d4edda; }
+  50% { background-color: #c3e6cb; }
+  100% { background-color: #fff; }
+}
+
+@keyframes flashRed {
+  0% { background-color: #f8d7da; }
+  50% { background-color: #f5c6cb; }
+  100% { background-color: #fff; }
+}
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  border: 2px solid #ccc;
+  border-top: 2px solid #333;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hidden {
+  display: none;
+}

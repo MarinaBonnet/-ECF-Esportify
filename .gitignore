@@ -1,6 +1,5 @@
 # Node.js
 node_modules/
-.env
 dist/
 build/
 .cache/
@@ -22,3 +21,13 @@ Thumbs.db
 
 # Optional: test coverage
 coverage/
+
+#fichiers sensibles
+.env
+api/core/config.php
+tools/hash.php
+
+#fichier perso 
+marina.txt
+
+vendor/

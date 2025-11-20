@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Newsletter Esportify</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #aa1895;
+        }
+
+        .cta {
+            display: inline-block;
+            background-color: #aa1895;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .footer {
+            font-size: 0.8em;
+            color: #666;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎮 Nouveau tournoi sur Esportify !</h1>
+        <p>Bonjour {{username}},</p>
+        <p>Nous sommes ravis de t’annoncer notre prochain tournoi sur <strong>{{gameName}}</strong> !</p>
+        <ul>
+            <li><strong>Date :</strong> {{eventDate}}</li>
+            <li><strong>Heure :</strong> {{eventTime}}</li>
+            <li><strong>Récompenses :</strong> {{rewards}}</li>
+        </ul>
+        <p>Rejoins-nous et montre ce que tu vaux !</p>
+        <a href="{{eventLink}}" style="display:inline-block;background-color:#aa1895;color:#fff;
+          padding:10px 20px;text-decoration:none;border-radius:4px;margin-top:20px;">
+            Je m’inscris
+        </a>
+
+
+        <div class="footer">
+            Tu reçois cet email car tu es abonné(e) à la newsletter Esportify.<br />
+            <a href="https://esportify.com/unsubscribe.php?token={{unsubscribeToken}}">Se désabonner</a>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+[
+  {
+    "teamId": "team123",
+    "author": "Marina",
+    "content": "Premier message test",
+    "timestamp": { "$date": "2025-11-18T20:15:00Z" }
+  },
+  {
+    "teamId": "team123",
+    "author": "Alice",
+    "content": "Salut l’équipe !",
+    "timestamp": { "$date": "2025-11-18T20:16:00Z" }
+  },
+
+  {
+    "teamId": "team123",
+    "author": "Marina",
+    "content": "Salut l’équipe, on se retrouve demain pour le match !",
+    "timestamp": { "$date": "2025-11-18T20:15:00Z" }
+  },
+  {
+    "teamId": "team123",
+    "author": "Alice",
+    "content": "Oui parfait, je prépare les stratégies.",
+    "timestamp": { "$date": "2025-11-18T20:16:00Z" }
+  },
+  {
+    "teamId": "team123",
+    "author": "Bob",
+    "content": "Je ramène les snacks pour la pause 😅",
+    "timestamp": { "$date": "2025-11-18T20:17:00Z" }
+  },
+  {
+    "teamId": "team456",
+    "author": "Claire",
+    "content": "On doit s’entraîner plus sur l’Aim Trainer.",
+    "timestamp": { "$date": "2025-11-18T20:18:00Z" }
+  },
+  {
+    "teamId": "team456",
+    "author": "David",
+    "content": "Bonne idée, je propose une session ce soir.",
+    "timestamp": { "$date": "2025-11-18T20:19:00Z" }
+  },
+  {
+    "teamId": "team456",
+    "author": "Emma",
+    "content": "Je m’occupe de réserver la salle.",
+    "timestamp": { "$date": "2025-11-18T20:20:00Z" }
+  }
+]

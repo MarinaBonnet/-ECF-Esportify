@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Esportify Dev Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css" />
+</head>
+
+<body>
+    <main>
+        <h1>🧪 Dev Dashboard</h1>
+
+        <!-- 🔧 Mode développeur -->
+        <section id="dev-mode-toggle" aria-label="Mode développeur">
+            <button id="json-mode" class="dev-btn">📦 Mode JSON</button>
+            <button id="ws-mode" class="dev-btn">🔌 Mode WebSocket</button>
+            <button id="clear-logs" class="dev-btn">🧹 Effacer les logs</button>
+            <span id="mode-indicator"></span>
+        </section>
+
+        <section id="dev-console" class="console-box" aria-label="Console de logs"></section>
+
+        <!-- ⭐ Favoris -->
+        <section id="favoris-section" aria-label="Mes favoris">
+            <h2>⭐ Mes favoris</h2>
+
+            <!-- 🔹 Formulaire d'ajout -->
+            <form id="add-favori-form" class="favori-form">
+                <input type="text" name="nom" placeholder="Nom du favori" required />
+                <input type="url" name="url" placeholder="URL" required />
+                <input type="text" name="categorie" placeholder="Catégorie" required />
+                <button type="submit">➕ Ajouter</button>
+            </form>
+
+            <!-- 🔹 Filtre par catégorie -->
+            <div class="favori-filtres">
+                <label for="filtre-categorie">Filtrer par catégorie :</label>
+                <select id="filtre-categorie">
+                    <option value="">Toutes les catégories</option>
+                    <option value="Assistant">Assistant</option>
+                    <option value="Outil">Outil</option>
+                </select>
+            </div>
+
+            <!-- 🔹 Conteneur des cartes -->
+            <div id="favoris-container" class="favoris-cartes"></div>
+
+            <!-- 🔹 Zone de statut / feedback -->
+            <div id="status-zone"></div>
+            <p id="form-message" class="form-feedback hidden"></p>
+        </section>
+    </main>
+
+    <!-- 🔹 Scripts -->
+    <script src="js/helpers/devConsole.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="js/eventHistory.js"></script>
+    <script src="js/statusManager.js"></script>
+    <script src="js/scoreTracker.js"></script>
+</body>
+
+</html>

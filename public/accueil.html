@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esportify - Plateforme de tournois Esport en ligne</title>
+  <meta name="description" content="Mettez vos compétences à l'epreuve avec Esportify, la plateforme 100% gaming.
+    Rejoignez une communauté passionnée de joueurs,participez à des tournois palpitants.
+    Rejoignez-nous dès maintenant et devenez le champion du gaming ! " />
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="./assets/fontawesome/css/all.min.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="./assets/img/logoManette.png" />
+</head>
+
+<body>
+  <!--creation d'une intro sur la plateforme-->
+  <div class="intro">
+    <div class="logo-wrapper">
+      <img src="./assets/img/logoManette.png"
+        alt="Esportify logo featuring a stylized game controller with vibrant colors, set against a dynamic background evoking excitement and energy; no visible text"
+        class="logo-img" />
+    </div>
+    <canvas class="explosion hidden"></canvas>
+    <div class="flash hidden"></div>
+    <audio class="sound" src="./assets/sounds/intro_sound.mp3"></audio>
+
+    <!-- Barre de progression -->
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+  </div>
+
+  <main class="site-content">
+    <!--header de la page avec bannière et menu-->
+
+    <!--menu de navigation desktop-->
+    <div class="topbar">
+      <div class="logo">
+        <a href="accueil.html"><img src="./assets/img/logoManette.png" alt="logo de esportify" /></a>
+      </div>
+      <nav class="nav-links" aria-label="Menu de navigation">
+        <a href="accueil.html">Accueil</a>
+        <a href="events_tournois.php">Événements</a>
+        <a href="jeux.php">Jeux</a>
+        <button type="button" class="nav-button" aria-haspopup="dialog" aria-controls="contact-modal">
+          Contacts
+        </button>
+        <button type="button" class="nav-button" aria-haspopup="dialog" aria-controls="login-modal">
+          Connexion
+        </button>
+      </nav>
+      <button class="burger" aria-label="Ouvrir le menu" aria-controls="mobile-menu" aria-expanded="false">
+        <span class="lines" aria-hidden="true"></span>
+      </button>
+    </div>
+    <header class="header">
+      <dialog id="mobile-menu" class="mobile-panel" aria-modal="true" aria-label="Menu">
+        <nav class="mobile-nav" aria-label="Menu de navigation mobile">
+          <button class="close-menu" aria-label="Fermer le menu">×</button>
+          <a href="accueil.html">Accueil</a>
+          <a href="events_tournois.php">Evénements</a>
+          <a href="jeux.php">Jeux</a>
+          <button type="button" class="nav-button" aria-haspopup="dialog" aria-controls="contact-modal">
+            Contacts
+          </button>
+          <button type="button" class="nav-button" aria-haspopup="dialog" aria-controls="login-modal">
+            Connexion
+          </button>
+        </nav>
+      </dialog>
+
+      <!-- banniere principale  -->
+
+      <div class="baseline">
+        <span class="baseline-title-fixe"> Plateforme 100% </span><br />
+        <div class="banner-container">
+          <span class="baseline-title-dynamique"> Esport Tournois Français</span>
+        </div><br />
+        <span class="baseline-texte"> Rejoignez-nous dès maintenant ! </span><br />
+        <button class="baseline-cta" onclick="document.getElementById('signup-modal').showModal()">Play Now!</button>
+      </div>
+    </header>
+    <!--fin header-->
+
+    <!-- section de la page-->
+    <section class="home-section">
+      <div class="container-small">
+        <!--image à gauche-->
+        <div class="block-left">
+          <div class="block-img">
+            <img src="./assets/img/imageGaming/game-console.jpg" alt="photo d'une manette de console" />
+          </div>
+        </div>
+        <!--texte à droite-->
+        <div class="block-right">
+          <div class="block-content">
+            <h2 class="title">Bienvenue sur <span class="accent"> Esportify </span></h2>
+            <p>
+              Découvrez <strong>Esportify</strong>, la plateforme ultime pour les passionnés de
+              gaming et d'esport. Rejoignez une communauté dynamique, participez
+              à des tournois palpitants et améliorez vos compétences. Que vous
+              soyez un joueur amateur ou un pro, Esportify est fait pour vous !
+            </p>
+            <div class="more">
+              <a href="#teams"> En savoir plus </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="home-section alt">
+      <!--texte à gauche-->
+      <div class="container-small">
+        <div class="block-left">
+          <div class="block-content">
+            <span class="baseline-title-fixe">Prêt à relever les défis !</span>
+            <ul>
+              <li><i class="fa-solid fa-gamepad" style="color: #b197fc"></i> Rejoignez le Game</li>
+              <li><i class="fa-solid fa-khanda" style="color: #b197fc"></i> Jouez les Matchs</li>
+              <li><i class="fa-solid fa-trophy" style="color: #b197fc"></i> Participez aux Tournois</li>
+            </ul>
+            <button type="button" class="nav-button" aria-haspopup="dialog" aria-controls="signup-modal"
+              onclick="document.getElementById('signup-modal').showModal()">S'inscrire</button>
+          </div>
+        </div>
+        <!--image à droite-->
+        <div class="block-right">
+          <div class="block-img">
+            <img src="./assets/img/imageGaming/game-console.jpg" alt="photo d'un casque de gamer" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="block-stats">
+      <span><i class="fa-solid fa-plus" style="color: #ffffff"></i> 120000
+        Matchs joués</span>
+      <span><i class="fa-solid fa-plus" style="color: #ffffff"></i> 2000
+        Tournois</span>
+      <span><i class="fa-solid fa-plus" style="color: #ffffff"></i> 35000
+        Membres</span>
+    </div>
+    <div class="block-matches">
+      <div class="block-matches-infos">
+        <h2 class="title-matches">Matchs</h2>
+        <p class="text-matches">
+          <span>
+            <i class="fa-solid fa-fire" style="color: #ffd43b"></i>
+            Des matchs intenses. Des défis relevés. Une seule mission :
+            décrocher la première place.</span><br />
+          <span>Prépare-toi à vivre l’adrénaline, la stratégie, et le frisson
+            de la victoire</span>
+          <br />
+          <span><i class="fa-solid fa-bomb" style="color: #e05c0f"></i>
+            Rejoins la bataille. Montre ce que tu vaux. <br />Es-tu prêt
+            ?</span>
+        </p>
+      </div>
+    </div>
+
+
+
+    <!-- 🎮 Carrousel des événements -->
+    <div class="carousel-container">
+      <button class="navigation-item" data-slider="prev" aria-label="précédent">
+        <i class="fa-solid fa-backward" style="color: #aa1895"></i>
+      </button>
+
+      <div class="carousel-relative" data-slider>
+        <div class="carousel-track" data-slider-wrapper>
+          <!-- Les slides seront injectées ici par JS -->
+        </div>
+      </div>
+
+      <button class="navigation-item" data-slider="next" aria-label="suivant">
+        <i class="fa-solid fa-forward" style="color: #aa1895"></i>
+      </button>
+    </div>
+
+    <!-- 🪄 Popup de détails -->
+    <dialog id="event-popup">
+      <button onclick="document.getElementById('event-popup').close()">Fermer</button>
+      <div id="popup-content"></div>
+    </dialog>
+    <div class="carousel-counter" data-slider-counter></div>
+
+    <!-- fin caroussel-->
+
+    <!--mise en place des différents acteur de la plateforme-->
+
+    <div class="container">
+      <div class="partner">
+        <img class="partner" src="./assets/img/partenaires/11-logos-concurrents-marques-jeuxvideo-actualite-gaming.jpg"
+          alt="logos des 11 partenaires de la plateforme" />
+        <span>
+          Ils nous font confiance ! <br />
+          Pourquoi pas toi?</span>
+      </div>
+      <div class="social">
+        <a href="https://discord.gg/tonserveur" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-discord" style="color: #000000"></i>
+        </a>
+        <a href="https://www.facebook.com/tonprofil" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-facebook" style="color: #000000"></i>
+        </a>
+        <a href="https://www.youtube.com/tonchaine" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-youtube" style="color: #000000"></i>
+        </a>
+        <a href="https://www.tiktok.com/@tonprofil" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-tiktok" style="color: #000000"></i>
+        </a>
+        <a href="https://www.playstation.com/fr-fr/profile/tonprofil" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-playstation" style="color: #000000"></i>
+        </a>
+        <a href="https://www.xbox.com/fr-fr/profile/tonprofil" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-xbox" style="color: #000000"></i>
+        </a>
+      </div>
+
+
+      <!--newsletter et boutton cta pour recevoir les nouvelles-->
+      <div class="form-news">
+        <p>
+          Rejoins la newsletter pour rester à l’affût de tous les événements à venir !
+        </p>
+        <form class="inscription-news" action="/plateforme/api/forms/sendNewsletter.php" method="POST">
+          <input class="input" type="email" name="email" placeholder="Rentre ton E-mail" required />
+          <button class="button-news" type="submit">Abonne-toi !</button>
+        </form>
+      </div>
+
+    </div>
+    <!-- Description Esportify -->
+
+    <div class="container-teams" id="teams">
+      <div class="teams-profil-center">
+        <h2 class="title-teams">A Propos de Nous...</h2>
+        <p>
+          Esportify c’est tout d’abord une bande de copain passionnée de jeu
+          vidéo qui on voulu créer une communauté qui leur ressemble . C’est
+          donc le 17 mars 2021 que nous avons fondée La Startup dédié au Esport.
+          Fort de notre succés en organisant des événements liés aux compétions
+          de jeux vidéo ,nous sommes actuellement l’une des meilleures
+          plateformes et tout ça c'est grâce à vous !!!
+        </p>
+      </div>
+      <div class="teams-cards">
+        <div class="teams-profil">
+          <img class="photo-teams" src="./assets/img/teams/pexels-kyle-miller-169884138-10983885.jpg"
+            alt="photo de profile de kyle" />
+          <div class="info-teams">
+            <h3>Laura</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore est, voluptatum in debitis minima
+              dolorum
+              a
+              deserunt vitae aperiam?</p>
+          </div>
+        </div>
+        <div class="teams-profil">
+          <img class="photo-teams" src="./assets/img/teams/pexels-phxtosene-eneas-525081206-28114092.jpg" alt="" />
+          <div class="info-teams">
+            <h3>Mike</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet molestiae beatae in ad velit?
+              Incidunt
+              nesciunt nemo vitae ad </p>
+          </div>
+        </div>
+        <div class="teams-profil">
+          <img class="photo-teams" src="./assets/img/teams/image_manga.jpg" alt="" />
+          <div class="info-teams">
+            <h3>Marina</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum, accusantium, mollitia nisi, corrupti
+              modi
+              ducimus fugit similique excepturi rem ipsa a.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--deuxieme caroussel pour galerie photo-->
+
+    <div class="carousel-container">
+      <div class="carousel-relative" data-slider>
+        <div class="img-photo-tournois" id="img-photo-tournois" data-slider-wrapper>
+          <article class="item-photo">
+            <img src="./assets/img/photosEsportTournoi/photoEsport2.jpeg" alt="photo tournois E-sport" class="photo" />
+          </article>
+          <article class="item-photo">
+            <img src="./assets/img/photosEsportTournoi/photo_esport3.jpg" alt="photo tournois E-sport" class="photo" />
+          </article>
+          <article class="item-photo">
+            <img src="./assets/img/photosEsportTournoi/photo_esport.jpg" alt="photo tournois E-sport" class="photo" />
+          </article>
+          <article class="item-photo">
+            <img src="./assets/img/photosEsportTournoi/photo_esport4.jpg" alt="photo tournois E-sport" class="photo" />
+          </article>
+          <article class="item-photo">
+            <img src="./assets/img/photosEsportTournoi/photo_esport3.jpg" alt="photo tournois E-sport" class="photo" />
+          </article>
+        </div>
+      </div>
+      <button class="navigation-item" data-slider="next">
+        <i class="fa-solid fa-forward" style="color: #aa1895"></i>
+      </button>
+      <button class="navigation-item" data-slider="prev">
+        <i class="fa-solid fa-backward" style="color: #aa1895"></i>
+      </button>
+    </div>
+    </section>
+    <!--pied de page -->
+    <!-- pied de page -->
+    <footer class="footer-nav">
+      <a href="accueil.html">
+        <img src="./assets/img/logoManette.png" class="footer-logo" alt="logo de esportify" />
+      </a>
+      <ul>
+        <li>© 2025 Esportify. Tous droits réservés.</li>
+        <li>Made With
+          <img src="./assets/img/icones/Vector_heart.png" alt=" icone coeur" class="icone-heart" />
+        </li>
+        <li><a href="cgu.html">Conditions d’utilisation</a></li>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Politique de confidentialité (RGPD)</a></li>
+        <li><a href="contact.html">Contacte nous</a></li>
+      </ul>
+    </footer>
+  </main>
+
+  </main>
+  <script type="module" src="main.js"></script>
+
+  <!-- Formulaire contact -->
+  <div id="global-forms"></div>
+  <!-- Loader pour le chargement des formulaires -->
+  <div id="form-loader" class="loader hidden">Chargement des formulaires...</div>
+  <div id="game-loader" class="loader hidden">Chargement du jeu...</div>
+
+
+</body>
+
+</html>

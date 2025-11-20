@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YamZilla</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <img src="/Yamzilla/assets/logo.png" alt="Logo YamZilla" class="logo" />
+    <h1>YamZilla</h1>
+    <button class="sound-toggle" aria-pressed="true"> Son activé</button>
+  </header>
+
+  <main>
+    <!-- Arène de dés -->
+    <section class="arena">
+      <div class="dice-zone">
+        <div class="dice-container"></div>
+        <div class="kept-container"></div>
+      </div>
+    </section>
+
+    <!-- Contrôles du tour -->
+    <section class="controls">
+      <div class="player-info active" data-player="1">
+        <img class="avatar" alt="Avatar joueur" />
+        <span class="player-label"></span>
+      </div>
+      <div class="player-info" data-player="2">
+        <img class="avatar" alt="Avatar joueur" />
+        <span class="player-label"></span>
+      </div>
+
+      <button class="roll-btn">Lancer les dés</button>
+      <p class="roll-counter">Lancers restants : 3</p>
+    </section>
+
+    <!-- Combinaisons -->
+    <section class="combo-grid" data-player="1">
+      <h2>Choisissez votre combinaison</h2>
+      <ul class="combo-list" data-player="1">
+        <li data-combo="one">Une</li>
+        <li data-combo="two">Deux</li>
+        <li data-combo="three">Trois</li>
+        <li data-combo="four">Quatre</li>
+        <li data-combo="five">Cinq</li>
+        <li data-combo="six">Six</li>
+        <li data-combo="brelan">Brelan</li>
+        <li data-combo="carre">Carré</li>
+        <li data-combo="full">Full House</li>
+        <li data-combo="suite"> Grande Suite</li>
+        <li data-combo="suiteSmall"> Petite Suite</li>
+        <li data-combo="yam">Yam's</li>
+        <li data-combo="chance">Chance</li>
+      </ul>
+    </section>
+    <section class="combo-grid" data-player="2">
+      <h3>Combinaisons joueur 2</h3>
+      <ul class="combo-list" data-player="2"></ul>
+    </section>
+    <section class="score-grid">
+      <h2>Feuille de score</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Combinaison</th>
+            <th>Joueur 1</th>
+            <th>Joueur 2</th>
+          </tr>
+        </thead>
+        <tbody class="score-body">
+          <tr>
+            <td>Une</td>
+            <td class="score-cell" data-combo="one" data-player="1"></td>
+            <td class="score-cell" data-combo="one" data-player="2"></td>
+          </tr>
+          <tr>
+            <td>Deux</td>
+            <td class="score-cell" data-combo="two" data-player="1"></td>
+            <td class="score-cell" data-combo="two" data-player="2"></td>
+          </tr>
+          <tr>
+            <td>Trois</td>
+            <td class="score-cell" data-combo="three" data-player="1"></td>
+            <td class="score-cell" data-combo="three" data-player="2"></td>
+          </tr>
+          <tr>
+            <td>Quatre</td>
+            <td class="score-cell" data-combo="four" data-player="1"></td>
+            <td class="score-cell" data-combo="four" data-player="2"></td>
+          </tr>
+          <tr>
+            <td>Cinq</td>
+            <td class="score-cell" data-combo="five" data-player="1"></td>
+            <td class="score-cell" data-combo="five" data-player="2"></td>
+          </tr>
+          <tr>
+            <td>six</td>
+            <td class="score-cell" data-combo="six" data-player="1"></td>
+            <td class="score-cell" data-combo="six" data-player="2"></td>
+          </tr>
+          <!-- etc. pour chaque combinaison -->
+          <tr>
+            <td>Brelan</td>
+            <td class="score-cell" data-combo="brelan" data-player="1"></td>
+            <td class="score-cell" data-combo="brelan" data-player="2"></td>
+          </tr>
+          <tr>
+            <td>Carré</td>
+            <td class="score-cell" data-combo="carre" data-player="1"></td>
+            <td class="score-cell" data-combo="carre" data-player="2"></td>
+          </tr>
+          <tr>
+            <td>Full House</td>
+            <td class="score-cell" data-combo="full" data-player="1"></td>
+            <td class="score-cell" data-combo="full" data-player="2"></td>
+          </tr>
+          <tr>
+            <td>Grande Suite</td>
+            <td class="score-cell" data-combo="suite" data-player="1"></td>
+            <td class="score-cell" data-combo="suite" data-player="2"></td>
+          </tr>
+          <tr>
+            <td>Petite Suite</td>
+            <td class="score-cell" data-combo="suiteSmall" data-player="1"></td>
+            <td class="score-cell" data-combo="suiteSmall" data-player="2"></td>
+          </tr>
+          <tr>
+            <td>Yamzilla</td>
+            <td class="score-cell" data-combo="yam" data-player="1"></td>
+            <td class="score-cell" data-combo="yam" data-player="2"></td>
+          </tr>
+          <tr>
+            <td>Chance</td>
+            <td class="score-cell" data-combo="chance" data-player="1"></td>
+            <td class="score-cell" data-combo="chance" data-player="2"></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td><strong>Total Partie 1</strong></td>
+            <td class="total-part1" data-player="1">0 pts</td>
+            <td class="total-part1" data-player="2">0 pts</td>
+          </tr>
+          <tr>
+            <td><strong>Bonus Partie 1</strong></td>
+            <td class="bonus-cell" data-player="1"></td>
+            <td class="bonus-cell" data-player="2"></td>
+          </tr>
+          <tr>
+            <td><strong>Total Partie 2</strong></td>
+            <td class="total-part2" data-player="1">0 pts</td>
+            <td class="total-part2" data-player="2">0 pts</td>
+          </tr>
+          <tr>
+            <td><strong>Total</strong></td>
+            <td class="total" data-player="1">0 pts</td>
+            <td class="total" data-player="2">0 pts</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <button class="chat-toggle">Chat</button>
+    <div class="chat-panel hidden">
+      <div class="chat-log"></div>
+      <form class="chat-controls">
+        <button class="emoji-toggle">🎨 +</button>
+        <div class="emoji-picker hidden">
+          <button class="emoji">😂</button>
+          <button class="emoji">👏</button>
+          <button class="emoji">🐱</button>
+          <button class="emoji">🎲</button>
+          <button class="emoji">🔥</button>
+          <button class="emoji">✅</button>
+          <button class="emoji">❌</button>
+        </div>
+
+        <input type="text" class="chat-input" placeholder="Tape ton message..." />
+        <button type="submit" class="chat-send">Envoyer</button>
+      </form>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 YamZilla - Tous droits réservés</p>
+  </footer>
+
+  <audio id="rollSound" src="./assets/roll.mp3"></audio>
+
+  <!-- Ton moteur de jeu -->
+  <script type="module" src="./js/main.js"></script>
+  <script type="module" src="./js/events.js"></script>
+
+  <!-- Modules utilitaires -->
+  <script type="module" src="./js/utils.js"></script>
+  <script type="module" src="./js/logicScore.js"></script>
+
+
+
+  <!-- Panneau debug -->
+  <script type="module" src="./js/debug.js"></script>
+
+  <div id="debug-panel" data-tested style="display: none;">
+    <h3>🧪 Debug YamZilla</h3>
+    <div id="debug-dice"></div>
+    <div id="debug-counts"></div>
+    <div id="debug-combo"></div>
+    <div id="debug-score"></div>
+    <button id="simulate-dice"> Simuler les dés</button>
+    <select id="combo-select">
+      <option value="one">Un</option>
+      <option value="two">Deux</option>
+      <option value="three">Trois</option>
+      <option value="four">Quatre</option>
+      <option value="five">Cinq</option>
+      <option value="six">Six</option>
+      <option value="brelan">Brelan</option>
+      <option value="carre">Carré</option>
+      <option value="full">Full House</option>
+      <option value="suiteSmall">Petite Suite</option>
+      <option value="suite">Grande Suite</option>
+      <option value="yam">YamZilla</option>
+      <option value="chance">Chance</option>
+    </select>
+  </div>
+  <section id="test-panel" style="display: none; border: 1px solid #ccc; padding: 1em; margin-top: 1em;">
+    <h3>🧪 Résultats des tests unitaires</h3>
+    <ul id="test-results" style="list-style: none; padding-left: 0;"></ul>
+  </section>
+
+  <button id="run-tests">Lancer les tests unitaires</button>
+
+</body>
+
+</html>
